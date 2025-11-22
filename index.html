@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>صاحب السمو الملكي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>المكرمة الملكية - صاحب السمو الملكي</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,16 +18,33 @@
             },
             colors: {
               royal: {
-                green: '#004D25',
-                gold: '#C5A028',
+                green: '#013220', // Darker, more premium green
+                greenLight: '#0B4619',
+                gold: '#D4AF37',
                 goldLight: '#FFD700',
-                goldDark: '#8A6E1C',
-                black: '#1A1A1A',
+                goldDark: '#AA6C39',
+                accent: '#C5A028',
               }
             },
             backgroundImage: {
-              'gold-gradient': 'linear-gradient(135deg, #C5A028 0%, #FFD700 50%, #8A6E1C 100%)',
-              'royal-pattern': "url('https://www.transparenttextures.com/patterns/arabesque.png')"
+              'gold-gradient': 'linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%)',
+              'gold-shine': 'linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 60%)',
+              'royal-mesh': 'radial-gradient(circle at center, rgba(11, 70, 25, 0.8) 0%, rgba(1, 50, 32, 0.95) 100%)',
+            },
+            animation: {
+              'shimmer': 'shimmer 3s infinite linear',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              shimmer: {
+                '0%': { backgroundPosition: '200% 0' },
+                '100%': { backgroundPosition: '-200% 0' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
             }
           }
         }
@@ -43,8 +60,24 @@
   }
 }
 </script>
+<style>
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #013220;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 4px;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
 </head>
-  <body class="bg-royal-green font-naskh text-white antialiased">
+  <body class="bg-royal-green font-naskh text-white antialiased overflow-x-hidden">
     <div id="root"></div>
   </body>
 </html>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Gift } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 interface CtaButtonProps {
   text: string;
@@ -12,16 +12,25 @@ export const CtaButton: React.FC<CtaButtonProps> = ({ text, href }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative inline-flex items-center justify-center px-12 py-4 text-lg font-bold text-royal-green transition-all duration-200 bg-gold-gradient font-amiri rounded-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 shadow-[0_0_40px_rgba(197,160,40,0.3)] overflow-hidden"
+      className="relative w-full max-w-md group mx-auto block touch-manipulation"
     >
-      <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
-      <span className="absolute top-0 left-0 w-full h-1 bg-white/30"></span>
+      <div className="absolute -inset-1 bg-gold-gradient rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-200 animate-pulse"></div>
       
-      <Gift className="w-6 h-6 ml-3 animate-bounce" />
-      <span className="relative text-xl md:text-2xl tracking-wide">{text}</span>
-      <ArrowLeft className="w-6 h-6 mr-3 group-hover:-translate-x-1 transition-transform" />
-      
-      <span className="absolute bottom-0 right-0 block w-full h-1 bg-black/10"></span>
+      <button className="relative w-full overflow-hidden rounded-xl bg-gold-gradient px-8 py-4 md:py-5 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] active:translate-y-1 active:shadow-none">
+        {/* Shimmer Animation Layer */}
+        <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/40 to-transparent z-10"></div>
+        
+        {/* Button Content */}
+        <div className="flex items-center justify-center gap-3 text-royal-green font-bold z-20 relative">
+          <span className="font-amiri text-xl md:text-3xl tracking-wider drop-shadow-sm">
+            {text}
+          </span>
+          <ExternalLink className="w-6 h-6 md:w-8 md:h-8 animate-bounce-x" />
+        </div>
+        
+        {/* Subtle Texture Overlay */}
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/diamond-upholstery.png')] pointer-events-none mix-blend-overlay"></div>
+      </button>
     </a>
   );
 };
