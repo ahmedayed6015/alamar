@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صاحب السمو الملكي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              amiri: ['Amiri', 'serif'],
+              naskh: ['Noto Naskh Arabic', 'serif'],
+            },
+            colors: {
+              royal: {
+                green: '#004D25',
+                gold: '#C5A028',
+                goldLight: '#FFD700',
+                goldDark: '#8A6E1C',
+                black: '#1A1A1A',
+              }
+            },
+            backgroundImage: {
+              'gold-gradient': 'linear-gradient(135deg, #C5A028 0%, #FFD700 50%, #8A6E1C 100%)',
+              'royal-pattern': "url('https://www.transparenttextures.com/patterns/arabesque.png')"
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-royal-green font-naskh text-white antialiased">
+    <div id="root"></div>
+  </body>
+</html>
